@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    >
+
+
+ <RelativeLayout
+
+     android:layout_width="match_parent"
+     android:layout_height="60dp"
+     android:background="@color/blue">
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/ic_action_menu"
+         android:layout_centerVertical="true"
+         android:layout_margin="16dp"
+         android:id="@+id/menu_tab"
+         />
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Book"
+         android:textColor="@color/white"
+         android:layout_centerVertical="true"
+         android:layout_toRightOf="@id/menu_tab"
+         />
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/ic_search"
+         android:layout_centerVertical="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginRight="16dp"
+         />
+     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        >
+       <TextView
+           android:id="@+id/computer_science"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Computer Science"
+           android:textColor="@color/white"
+           android:layout_margin="8dp"
+           />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more_option"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
