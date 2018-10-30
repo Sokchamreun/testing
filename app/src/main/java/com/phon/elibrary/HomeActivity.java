@@ -7,7 +7,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -19,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
 
 
@@ -30,6 +33,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -92,6 +98,12 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity_home, menu);
+        return true;
+    }
+
     class InnerHomeAdapter extends RecyclerView.Adapter<InnerHomeAdapter.InnerEventViewHolder> {
 
         private Book[] data;
@@ -120,6 +132,7 @@ public class HomeActivity extends AppCompatActivity {
             eventViewHolder.txtTitle.setText(book.getTitle());
             eventViewHolder.txtAuthor.setText(book.getAuthor());
             eventViewHolder.txtSize.setText(book.getSize());
+            eventViewHolder.imgHome.setImageURI(book.getImageUrl());
         }
 
         @Override
@@ -129,14 +142,14 @@ public class HomeActivity extends AppCompatActivity {
 
         class InnerEventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-            private ImageView imgHome;
+            private SimpleDraweeView imgHome;
             private TextView txtTitle;
             private TextView txtAuthor;
             private TextView txtSize;
             public InnerEventViewHolder(View itemView) {
                 super(itemView);
 
-                imgHome = itemView.findViewById(R.id.images);
+                imgHome = itemView.findViewById(R.id.ImagesUrl);
                 txtTitle = itemView.findViewById(R.id.titles);
                 txtAuthor = itemView.findViewById(R.id.authors);
                 txtSize = itemView.findViewById(R.id.size);

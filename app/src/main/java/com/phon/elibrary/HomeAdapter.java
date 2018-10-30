@@ -52,7 +52,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.EventViewHolde
         public EventViewHolder(View itemView) {
             super(itemView);
 
-            imgHome = itemView.findViewById(R.id.images);
+            imgHome = itemView.findViewById(R.id.ImagesUrl);
             txtTitle = itemView.findViewById(R.id.titles);
             txtAuthor = itemView.findViewById(R.id.authors);
             txtSize = itemView.findViewById(R.id.size);

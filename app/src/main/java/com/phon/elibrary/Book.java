@@ -4,16 +4,16 @@ import com.google.gson.annotations.SerializedName;
 
 public class Book {
     private int id;
-    private String imgUrl;
+    private String imageUrl;
     private String title;
     @SerializedName("location")
     private String author;
     private String size;
     private String description;
 
-    public Book(int id, String imgUrl, String title, String author, String size, String description) {
+    public Book(int id, String imageUrl, String title, String author, String size, String description) {
         this.id = id;
-        this.imgUrl = imgUrl;
+        this.imageUrl = imageUrl;
         this.title = title;
         this.author = author;
         this.size = size;
@@ -28,12 +28,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getTitle() {
